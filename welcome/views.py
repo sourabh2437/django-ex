@@ -20,8 +20,8 @@ def index(request):
 
 def login(request):
 	hostname = os.getenv('HOSTNAME', 'unknown')
-    PageView.objects.create(hostname=hostname)
-	
+	PageView.objects.create(hostname=hostname)
+
 	return render(request, 'welcome/login.html', {
         'hostname': hostname,
         'database': database.info(),
